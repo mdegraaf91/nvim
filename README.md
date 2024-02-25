@@ -1,3 +1,3 @@
-###Neovim config
+### Neovim config
 
 Directory to install: ``~/.config/nvim/``
