@@ -8,3 +8,5 @@ vim.cmd("set nowrap")
 vim.cmd("set conceallevel=2")
 
 vim.g.mapleader = " "
+vim.keymap.set({'n', 'v'}, "<leader>c", '"+y', {})
+vim.keymap.set({'n', 'v'}, "<leader>v", '"+P', {})
