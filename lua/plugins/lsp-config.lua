@@ -24,13 +24,25 @@ return {
             lspconfig.tsserver.setup({
                 capabilities = capabilities
             })
-            lspconfig.intelephense.setup({
+            lspconfig.phpactor.setup({
                 capabilities = capabilities
+            })
+            lspconfig.cssls.setup({
+                capabilities = capabilities
+            })
+            lspconfig.tailwindcss.setup({
+                capabilities = capabilities
+            })
+            lspconfig.emmet_ls.setup({
+                capabilities = capabilities,
+                filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact", "svelte", "vue" }
             })
 
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
             vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+            vim.keymap.set('n', "gr", vim.lsp.buf.references, {})
+            vim.keymap.set('n', "gi", vim.lsp.buf.implementation, {})
         end
     }
 }
