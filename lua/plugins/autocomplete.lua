@@ -3,7 +3,11 @@ return {
         "hrsh7th/cmp-nvim-lsp"
     },
     {
-        "github/copilot.vim"
+        "github/copilot.vim",
+        config = function()
+            vim.keymap.set("n", "<leader>cp", ":Copilot enable<CR>", {})
+            vim.keymap.set("n", "<leader>co", ":Copilot disable<CR>", {})
+        end
     },
     {
         "L3MON4D3/LuaSnip",
