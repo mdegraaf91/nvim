@@ -11,6 +11,9 @@ return {
         "tpope/vim-fugitive",
     },
     {
+        "tpope/vim-commentary",
+    },
+    {
         "kdheepak/lazygit.nvim",
         config = function()
             vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", {})
