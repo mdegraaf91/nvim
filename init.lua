@@ -18,5 +18,4 @@ require("lazy").setup("plugins")
 
 
 --- Theme
----vim.cmd("colorscheme darcula-solid-custom")
 vim.cmd("colorscheme gruvbox-baby")
