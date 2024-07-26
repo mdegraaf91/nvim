@@ -17,12 +17,31 @@ return {
 			command = "node",
 			args = { "/Users/michael/.vscode/extensions/vscode-php-debug/out/phpDebug.js" },
 		}
+		dap.adapters["pwa-node"] = {
+			type = "server",
+			host = "localhost",
+			port = "${port}",
+			executable = {
+				command = "node",
+				args = { "/Users/michael/.vscode/extensions/vscode-js-debug/src/dapDebugServer.js", "${port}" },
+			},
+		}
+
 		dap.configurations.php = {
 			{
 				type = "php",
 				request = "launch",
 				name = "Listen for Xdebug",
 				port = 9003,
+			},
+		}
+		dap.configurations.javascript = {
+			{
+				type = "pwa-node",
+				request = "launch",
+				name = "Launch file",
+				program = "${file}",
+				cwd = "${workspaceFolder}",
 			},
 		}
 
@@ -50,6 +69,5 @@ return {
 		vim.keymap.set("n", "<Leader>dt", function()
 			dapui.toggle()
 		end, {})
-
 	end,
 }
