@@ -19,3 +19,12 @@ require("lazy").setup("plugins")
 
 --- Theme
 vim.cmd("colorscheme gruvbox-baby")
+
+local highlight_yank_group = vim.api.nvim_create_augroup('HighlightYank', { clear = true })
+vim.api.nvim_create_autocmd('TextYankPost', {
+    group = highlight_yank_group,
+    pattern = '*',
+    callback = function()
+        vim.highlight.on_yank { higroup = 'Visual', timeout = 200 }
+    end,
+})
