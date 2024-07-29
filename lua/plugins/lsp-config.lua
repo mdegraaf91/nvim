@@ -22,7 +22,21 @@ return {
                 capabilities = capabilities
             })
             lspconfig.tsserver.setup({
-                capabilities = capabilities
+                capabilities = capabilities,
+                init_options = {
+                    plugins = {
+                        {
+                            name = "@vue/typescript-plugin",
+                            location = "/Users/michael/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin",
+                            languages = { "javascript", "typescript", "vue" },
+                        }
+                    }
+                },
+                filetypes = {
+                    "javascript",
+                    "typescript",
+                    "vue",
+                }
             })
             lspconfig.phpactor.setup({
                 capabilities = capabilities
