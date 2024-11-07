@@ -19,6 +19,7 @@ return {
                         "jsx",
                         "js",
                         "ss",
+                        "vue",
 					},
 				}),
 			},
