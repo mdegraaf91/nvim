@@ -15,5 +15,9 @@ vim.filetype.add({
     extension = {
         ss = 'html',
         mjml = 'html',
+        env = 'sh',
+    },
+    pattern = {
+        [".env.*"] = 'sh'
     }
 })
