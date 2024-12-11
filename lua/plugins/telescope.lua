@@ -22,5 +22,12 @@ return {
             })
             require("telescope").load_extension("ui-select")
         end
+    },
+    {
+        "isak102/telescope-git-file-history.nvim",
+        config = function()
+            vim.keymap.set('n', "<leader>fh", '<cmd>Telescope git_file_history<CR>', {})
+            require("telescope").load_extension("git_file_history")
+        end
     }
 }
