@@ -29,5 +29,14 @@ return {
             vim.keymap.set('n', "<leader>fh", '<cmd>Telescope git_file_history<CR>', {})
             require("telescope").load_extension("git_file_history")
         end
-    }
+    },
+    {
+        "jemag/telescope-diff.nvim",
+        config = function()
+            require("telescope").load_extension("diff")
+            vim.keymap.set("n", "<leader>fd", function()
+                require("telescope").extensions.diff.diff_files({ hidden = true })
+            end, { desc = "Compare 2 files" })
+        end
+    },
 }
