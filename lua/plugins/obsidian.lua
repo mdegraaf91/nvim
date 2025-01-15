@@ -9,6 +9,12 @@ return {
             notes_subdir = "0 Inbox",
             new_notes_location = "notes_subdir",
             picker = { name = "telescope.nvim" },
+            ui = {
+                checkboxes = {
+                    [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
+                    ["x"] = { char = "", hl_group = "ObsidianDone" },
+                }
+            },
             note_id_func = function(title)
                 return title
             end,
