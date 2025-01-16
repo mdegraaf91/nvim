@@ -5,6 +5,9 @@ return {
         "MunifTanjim/nui.nvim"
     },
     config = function()
+        require("neo-tree").setup({
+            popup_border_style = "rounded"
+        })
         vim.keymap.set("n", "<leader>e", ":Neotree source=filesystem reveal=true position=float<CR>")
         --vim.keymap.set("n", "<C-n>", ":Neotree source=filesystem reveal=true position=left<CR>")
     end
