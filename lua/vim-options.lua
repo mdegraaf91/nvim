@@ -6,6 +6,7 @@ vim.cmd("set shiftwidth=4")
 vim.cmd("set termguicolors")
 vim.cmd("set nowrap")
 vim.cmd("set conceallevel=2")
+vim.cmd("set cmdheight=0")
 
 vim.g.mapleader = " "
 vim.keymap.set({'n', 'v'}, "<leader>c", '"+y', {})
