@@ -1,0 +1,34 @@
+# This snippet file enables vue files to use tabs for html, js and css. It also
+# includes some vue-specific html-like snippets, as well as some general
+# boilerplate code for vue.
+
+extends html, javascript, css
+
+snippet vue2
+	<template>
+		<div>
+            ${1}
+		</div>
+	</template>
+
+	<script>
+		export default {
+			${2}
+		}
+	</script>
+
+	<style scoped lang="scss"></style>
+
+
+snippet vue3
+    <template>
+        <div>
+            ${1}
+        </div>
+    </template>
+
+    <script setup lang="ts">
+        ${2}
+    </script>
+
+    <style scoped lang="scss"></style>
