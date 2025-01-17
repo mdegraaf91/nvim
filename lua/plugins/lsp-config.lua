@@ -17,9 +17,12 @@ return {
         config = function()
             local lspconfig = require("lspconfig")
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
+            local isMac = vim.fn.has('macunix') == 1
             local homePath = "/home"
-            if(vim.fn.has('macunix') == 1) then homePath = "/Users" end
-            local vueTypeScriptLocation = string.format("%s/michael/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin", homePath)
+            if (isMac) then homePath = "/Users" end
+            local vueTypeScriptLocation = string.format(
+            "%s/michael/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin",
+                homePath)
 
             lspconfig.lua_ls.setup({
                 capabilities = capabilities
@@ -47,9 +50,12 @@ return {
             lspconfig.cssls.setup({
                 capabilities = capabilities
             })
-            lspconfig.tailwindcss.setup({
-                capabilities = capabilities
-            })
+
+            if (isMac) then
+                lspconfig.tailwindcss.setup({
+                    capabilities = capabilities
+                })
+            end
             lspconfig.emmet_ls.setup({
                 capabilities = capabilities,
                 filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact", "svelte", "vue" }
