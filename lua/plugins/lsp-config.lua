@@ -17,6 +17,9 @@ return {
         config = function()
             local lspconfig = require("lspconfig")
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
+            local homePath = "/home"
+            if(vim.fn.has('macunix') == 1) then homePath = "/Users" end
+            local vueTypeScriptLocation = string.format("%s/michael/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin", homePath)
 
             lspconfig.lua_ls.setup({
                 capabilities = capabilities
@@ -27,7 +30,7 @@ return {
                     plugins = {
                         {
                             name = "@vue/typescript-plugin",
-                            location = "~/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin",
+                            location = vueTypeScriptLocation,
                             languages = { "javascript", "typescript", "vue" },
                         }
                     }
