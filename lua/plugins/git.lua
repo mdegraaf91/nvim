@@ -16,10 +16,10 @@ return {
 	{
 		"tpope/vim-commentary",
 		config = function()
-			local ts_utils = require("nvim-treesitter.ts_utils")
 
 -- NOTE: this causes big lag
 
+--			local ts_utils = require("nvim-treesitter.ts_utils")
 -- 			vim.api.nvim_create_autocmd("FileType", {
 -- 				pattern = "vue",
 -- 				callback = function()
