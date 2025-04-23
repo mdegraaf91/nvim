@@ -51,8 +51,10 @@ return {
                 capabilities = capabilities
             })
 
+            local emmetCapabilities = capabilities
+            emmetCapabilities.textDocument.completion.completionItem.snippetSupport = true
             lspconfig.emmet_ls.setup({
-                capabilities = capabilities,
+                capabilities = emmetCapabilities,
                 filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact", "svelte", "vue" }
             })
 
