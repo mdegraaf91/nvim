@@ -51,11 +51,6 @@ return {
                 capabilities = capabilities
             })
 
-            if (isMac) then
-                lspconfig.tailwindcss.setup({
-                    capabilities = capabilities
-                })
-            end
             lspconfig.emmet_ls.setup({
                 capabilities = capabilities,
                 filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact", "svelte", "vue" }
