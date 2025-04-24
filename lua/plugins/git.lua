@@ -8,7 +8,6 @@ return {
 			vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {})
 			vim.keymap.set("n", "<leader>gr", ":Gitsigns reset_hunk<CR>", {})
 			vim.keymap.set("n", "<leader>gl", ":Gitsigns blame_line<CR>", {})
-			vim.keymap.set("n", "<leader>gd", ":Gitsigns diffthis<CR>", {})
       vim.opt.signcolumn="yes"
 		end,
 	},
@@ -27,4 +26,14 @@ return {
 			vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", {})
 		end,
 	},
+  {
+    "sindrets/diffview.nvim",
+    config = function()
+      require("diffview").setup()
+
+			vim.keymap.set("n", "<leader>do", ":DiffviewOpen<CR>", {})
+			vim.keymap.set("n", "<leader>dc", ":DiffviewClose<CR>", {})
+			vim.keymap.set("n", "<leader>dh", ":DiffviewFileHistory %<CR>", {})
+    end
+  }
 }
