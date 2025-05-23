@@ -11,12 +11,10 @@ vim.cmd("set cmdheight=0")
 vim.g.mapleader = " "
 vim.keymap.set({'n', 'v'}, "<leader>c", '"+y', {})
 vim.keymap.set({'n', 'v'}, "<leader>v", '"+P', {})
-vim.keymap.set({'n', 'v'}, "<C-j>", '<C-W>j', {})
-vim.keymap.set({'n', 'v'}, "<C-k>", '<C-W>k', {})
+vim.keymap.set({'n', 'v'}, '<C-j>', '<C-d>zz', {})
+vim.keymap.set({'n', 'v'}, '<C-k>', '<C-u>zz', {})
 vim.keymap.set({'n', 'v'}, "<C-h>", '<C-W>h', {})
 vim.keymap.set({'n', 'v'}, "<C-l>", '<C-W>l', {})
-vim.keymap.set({'n', 'v'}, "<C-d>", '<C-d>zz', {})
-vim.keymap.set({'n', 'v'}, "<C-u>", '<C-u>zz', {})
 
 vim.filetype.add({
     extension = {
