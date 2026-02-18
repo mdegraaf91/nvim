@@ -62,9 +62,11 @@ return {
 			dap.toggle_breakpoint()
 		end, {})
 
+    --[[
 		vim.keymap.set("n", "<Leader>dn", function()
 			dap.continue()
 		end, {})
+    --]]
 
 		vim.keymap.set("n", "<Leader>dt", function()
 			dapui.toggle()
