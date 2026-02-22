@@ -26,6 +26,7 @@ return {
     })
 
     vim.keymap.set('n', "<leader>n", "<cmd>ObsidianNew<CR>", { desc = "Create New Note" })
-    vim.keymap.set('n', "<leader>t", "<cmd>ObsidianToday<CR>", { desc = "Open / create daily note" })
+    vim.keymap.set('n', "<leader>t", "<cmd>ObsidianToday<cr>", { desc = "Open / Create daily note" })
+    vim.keymap.set('n', 'gf', '<cmd>ObsidianFollowLink<CR>', { noremap = true, silent = true })
   end
 }
