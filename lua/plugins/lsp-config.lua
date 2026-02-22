@@ -50,6 +50,16 @@ return {
             lspconfig.cssls.setup({
                 capabilities = capabilities
             })
+            -- Java
+            lspconfig.jdtls.setup({
+                capabilities = capabilities
+            })
+            vim.diagnostic.config({
+              virtual_text = true
+            })
+            vim.keymap.set("n", "<leader>m", function()
+              vim.cmd("!mvn exec:java")
+            end)
 
             local emmetCapabilities = capabilities
             emmetCapabilities.textDocument.completion.completionItem.snippetSupport = true
