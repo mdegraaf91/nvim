@@ -5,7 +5,7 @@ return {
   ft = "markdown",
   config = function()
     require("obsidian").setup({
-      dir = "~/Vault/Vault",
+      dir = "~/Vault/vault",
       notes_subdir = "0 Inbox",
       new_notes_location = "notes_subdir",
       picker = { name = "telescope.nvim" },
